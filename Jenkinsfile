@@ -63,14 +63,14 @@ pipeline {
         stage('Deploy to Dev') {
             steps { 
                 script {
-                 sh "kubectl apply -f deployment.yaml" 
+                 sh "kubectl apply -f eks-deploy.yaml" 
                 } 
             } 
         }         
         stage('Deploy to QA') {
             steps { 
                 script {
-                 sh "kubectl apply -f deployment.yaml" 
+                 sh "kubectl apply -f eks-deploy.yaml" 
                 } 
             } 
         } 
@@ -84,7 +84,7 @@ pipeline {
         stage('Deploy to Production') { 
             steps { 
                 script { 
-                    sh "kubectl apply -f deployment.yaml"
+                    sh "kubectl apply -f eks-deploy.yaml"
                 } 
             } 
         }
